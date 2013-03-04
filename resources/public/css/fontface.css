@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'DesyrelRegular';
+    src: url('../fonts/desyrel-webfont.eot');
+    src: url('../fonts/desyrel-webfont.eot?#iefix') format('eot'),
+         url('../fonts/desyrel-webfont.woff') format('woff'),
+         url('../fonts/desyrel-webfont.ttf') format('truetype'),
+         url('../fonts/desyrel-webfont.svg#webfontaV59AZnO') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'BeryliumboldItalic';
+    src: url('beryliumbolditalic-webfont.eot');
+    src: url('beryliumbolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('beryliumbolditalic-webfont.woff') format('woff'),
+         url('beryliumbolditalic-webfont.ttf') format('truetype'),
+         url('beryliumbolditalic-webfont.svg#BeryliumboldItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Beryliumbold';
+    src: url('../fonts/beryliumbold-webfont.eot');
+    src: url('../fonts/beryliumbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/beryliumbold-webfont.woff') format('woff'),
+         url('../fonts/beryliumbold-webfont.ttf') format('truetype'),
+         url('../fonts/beryliumbold-webfont.svg#Beryliumbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'BeryliumItalic';
+    src: url('beryliumitalic-webfont.eot');
+    src: url('beryliumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('beryliumitalic-webfont.woff') format('woff'),
+         url('beryliumitalic-webfont.ttf') format('truetype'),
+         url('beryliumitalic-webfont.svg#BeryliumItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'BeryliumRegular';
+    src: url('../fonts/berylium-webfont.eot');
+    src: url('../fonts/berylium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/berylium-webfont.woff') format('woff'),
+         url('../fonts/berylium-webfont.ttf') format('truetype'),
+         url('../fonts/berylium-webfont.svg#BeryliumRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

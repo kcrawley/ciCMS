@@ -1,0 +1,330 @@
+/* CSS Document */
+.controls-row
+{
+	margin-bottom: 3px;
+}
+
+#tek_wrapper {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#tek_wrapper h1 {
+	background: #000 url("../images/h1_bg.gif") bottom right no-repeat;
+	padding: 10px 20px;
+	font-size: 16px;
+	font-weight: normal;
+	color: white;
+	margin: 0;
+}
+#tek_content {
+	padding: 20px;
+	overflow: hidden;
+}
+
+#tek_content .upload_control
+{
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#preview_image {
+	display: inline-block;
+	max-width: 100px;
+	vertical-align: top;
+}
+
+
+/* login section */
+
+#tek_wrapper .alerts {
+	padding: 0;
+	margin: 0;
+	font-size: .9em;
+	margin: 0 10px 20px;
+}
+	#tek_wrapper .alerts li {
+		margin-bottom: 3px;
+		list-style: none;
+	}
+	#tek_wrapper .alerts li.success {
+		background: #c8eebf;
+		border: 1px solid green;
+		color: green;
+		padding: 8px;
+	}
+	#tek_wrapper .alerts li.warning {
+		background: #f6f6cf;
+		border: 1px solid orange;
+		color: orange;
+		padding: 8px;
+	}
+	#tek_wrapper .alerts li.error {
+		background: #fce9e9;
+		border: 1px solid red;
+		color: red;
+		padding: 8px;
+	}
+#tek_wrapper .row {
+	clear: both;
+	margin-bottom: 4px;
+	margin-left: 0;
+}
+#tek_wrapper .submitrow {
+	margin-top: 14px;
+}
+#tek_wrapper .required {
+	border: 1px solid red;
+}
+#tek_wrapper span.required {
+	border: 0;
+	color: red;
+}
+/*#tek_wrapper div.error {
+	float: left;
+	color: red;
+	padding: 6px 0 10px;
+	font-size: 11px;
+}*/
+/*#tek_wrapper label {
+	float: left;
+	width: 180px;
+	display: block;
+	padding-top: 6px;
+	font-weight: bold;
+}*/
+/*#tek_wrapper .widelabel label {
+	width: 150px;
+}*/
+/*#tek_wrapper input {
+	width: 228px;
+	padding: 3px;
+	float: left;
+	border: 1px solid #ccc;
+}*/
+
+
+/*#tek_wrapper input.submit {
+	width: auto;
+	background: #fd830e;
+	padding: 5px 22px;
+	cursor: pointer;
+	border: 0;
+	color: #fff;
+}
+	#tek_wrapper input.submit:hover {
+		background: #ed6b00;
+	}*/
+#tek_wrapper #tek_cancel {
+	position: relative;
+	display: inline-block;
+	top: 3px;
+	left: 10px;
+	color: red;
+	font-size: 12px;
+}
+
+/* editing preview */
+
+@black: #000;
+body.tek_editing {
+}
+#tek_toolbar {
+	color: #fff;
+	font-size: 12px;
+	margin-bottom: -90px;
+	background: fade(@black, 30%);
+	position: fixed;
+	margin: 0 auto;
+	z-index: 15;
+	top: -12px;
+	min-width: 940px;
+	width: 100%;
+}
+	#tek_toolbar .tek_wrapper {
+		width: 940px;
+		margin: 0 auto;
+		padding-top: 14px;
+	}
+	#tek_toolbar .left {
+		float: left;
+		padding-left: 76px;
+	}	
+	#tek_toolbar .right {
+		float: right;
+		padding-right: 20px;
+	}
+	#tek_toolbar a {
+		color: #fff;
+	}
+	#tek_toolbar a:hover {
+		color: #eee;
+	}
+	
+.tek_edit {
+	position: relative;
+	display: inline-block;
+	z-index: 25;
+}
+	.tek_edit_type {
+		display: block;
+		padding: 4px 18px 0;
+		background: url("../images/edit_type.gif") top center no-repeat;
+		color: #fff;
+		font-size: 11px;
+		position: absolute;
+		top: -6px;
+		right: 10px;
+		height: 25px;
+		text-decoration: none;
+		z-index: 100;
+		line-height: normal;
+	}
+	.tek_edit_link {
+		border: 1px solid orange;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		overflow: hidden;
+		text-indent: -9999px;
+		outline: none;
+		background: url("../images/trans.gif");
+		z-index: 99;
+	}
+	.tek_edit_link:hover,
+	.tek_edit_link.hover {
+		background: url("../images/edit_bg.png");
+	}
+	
+/* editing window */
+#tek_wrapper textarea.textarea {
+	width: 700px;
+	height: 200px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 3px;
+	border: 1px solid #ccc;
+}
+#tek_wrapper textarea.wysiwyg {
+	width: 700px;
+	height: 302px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 3px;
+	border: 1px solid #ccc;
+}
+#tek_wrapper input.oneline {
+	width: 700px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	padding: 3px;
+	border: 1px solid #ccc;
+}
+
+/* settings page views */
+
+body.tek_page {
+	padding: 0;
+	margin: 0;
+	background: url("../images/page_bg.jpg") 0 0 repeat-y;
+}
+
+.tek_page #tek_content {
+	padding: 0;
+}
+	.tek_page .tek_left {
+		float: left;
+		width: 250px;
+	}
+	.tek_page .tek_right {
+		padding-top: 10px;
+		float: right;
+		width: 600px;
+		padding-right: 40px;
+	}
+	
+	.tek_page .tek_right table#c_list
+	{
+		margin-bottom: 150px;
+	}
+	
+	#tek_close {
+		float: right;
+		color: #fff;
+		cursor: pointer;
+		padding-top: 1px;
+		font-size: 12px;
+		text-decoration: underline;
+	}
+	.tek_nav {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+		.tek_nav li {
+			border-bottom: 1px solid #cecccc;
+		}
+		.tek_nav li.active {
+			background: #fff;
+		}
+		.tek_nav a,
+		.tek_nav span {
+			display: block;
+			padding: 12px 0 12px 20px;
+			font-size: 14px;
+			text-decoration: none;
+			color: #666;
+		}
+		.tek_nav span {
+			font-weight: bold;
+		}
+		.tek_nav .active a,
+		.tek_nav .active a:hover {
+			font-weight: bold;
+			background: none;
+			color: #000;
+		}
+		.tek_nav a:hover {
+			background: #d6d5d6;
+			color: #000;
+		}
+		
+		/* subnav */
+		.tek_nav li action span {
+			color: #000;
+		}
+		
+		.tek_nav ul {
+			list-style: square;
+			margin: 0 0 12px 40px;
+			padding: 0;
+		}
+		.tek_nav ul li {
+			border: 0;
+		}
+		.tek_nav ul li.active a,
+		.tek_nav ul li.inactive a {
+			display: block;
+			padding: 5px 0;
+			font-size: 11px;
+			font-weight: normal;
+			text-decoration: underline;
+			color: #666;
+		}
+		.tek_nav ul li.inactive a:hover {
+			color: #000;
+			background: none;
+			font-weight: normal;
+		}
+		.tek_nav ul li.active a,
+		.tek_nav ul li.active a:hover {
+			font-weight: bold;
+			color: #ed6b00;
+		}
+		
+		/* content styles */
+		.tek_page h2 {
+			margin: 40px 0 30px;
+			font-size: 24px;
+			font-weight: normal;
+		}
