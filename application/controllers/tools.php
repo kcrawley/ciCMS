@@ -12,7 +12,7 @@ class Tools extends CI_Controller
     function fileupload()
     {
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size']	= '100';
+        $config['max_size']	= '500';
         $config['max_width'] = '2048';
         $config['max_height'] = '2048';
         

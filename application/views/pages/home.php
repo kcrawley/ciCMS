@@ -40,16 +40,14 @@
 <!--start: Container -->
 <div class="container">
 
-    
-    <?php echo $promo1; ?>
 <hr>
 
 <!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
 <div class="hero-unit">
     <h3>
-        Cumberland Photography is proud to launch this website - however, it's very much a work in progress. We are developing several areas of this site as a learning tool and it's important to hear your feedback. If you run into any areas of the site that are confusing or seem to work incorrectly, please contact us so we can investigate! Thank you again for choosing Cumberland Photography.
+        <?php echo $hero_unit; ?>
     </h3>
-    <p><a class="btn btn-primary btn-large">Contact Us &raquo;</a></p>
+    <p><?php echo $hero_link; ?></p>
 </div>
 <!-- end: Hero Unit -->
 
@@ -67,7 +65,7 @@
                 <i class="ico-ok ico-white circle-color-full"></i>
                 <div class="icons-box-vert-info">
                     <h3>Have a code?</h3>
-                    <p>If you were given a gallery key code you may enter it here.</p>
+                    <p>If you were given a gallery key code by Cumberland Photo staff or your friend, please enter it here.</p>
                     <input type="text" id="private_gallery_key" placeholder="Enter key here..."/>
                 </div>
                 <div class="clear"></div>
@@ -80,8 +78,7 @@
             <div class="icons-box-vert">
                 <i class="ico-cup  ico-white circle-color-full"></i>
                 <div class="icons-box-vert-info">
-                    <h3>Best choice</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <?php echo $promo_box_2; ?>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -93,8 +90,7 @@
             <div class="icons-box-vert">
                 <i class="ico-ipad ico-white circle-color-full"></i>
                 <div class="icons-box-vert-info">
-                    <h3>Fully Responsive</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <?php echo $promo_box_3; ?>
                 </div>
                 <div class="clear"></div>
             </div>
@@ -114,7 +110,7 @@
 
     <div class="span9">
 
-        <div class="title"><h3>Latest Works</h3></div>
+        <div class="title"><h3><?php echo $item_header; ?></h3></div>
 
         <!-- start: Row -->
         <div class="row">
@@ -123,13 +119,13 @@
 
                 <div class="picture">
                     <a href="<?= $site_resources ?>img/car.jpg" rel="image" title="mobile app">
-                        <img src="<?= $site_resources ?>img/car.jpg" >
+                        <?php echo $item_image_1; ?>
                         <div class="image-overlay-zoom"></div>
                     </a>
                 </div>
                 <div class="item-description">
-                    <h4><a href="#">Mobile App</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <h4><?php echo $item_link_1; ?></h4>
+                    <p><?php echo $item_text_1; ?></p>
                 </div>
 
             </div>
@@ -138,13 +134,13 @@
 
                 <div class="picture">
                     <a href="project.html">
-                        <img src="<?= $site_resources ?>img/web_app1.jpg">
+                        <?php echo $item_image_2; ?>
                         <div class="image-overlay-link"></div>
                     </a>
                 </div>
                 <div class="item-description">
-                    <h4><a href="#">Mobile App</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <h4><?php echo $item_link_2; ?></h4>
+                    <p><?php echo $item_text_2; ?></p>
                 </div>
 
             </div>
@@ -153,13 +149,13 @@
 
                 <div class="picture">
                     <a href="<?= $site_resources ?>img/mobile_app1.jpg" rel="image" title="mobile app">
-                        <img src="<?= $site_resources ?>img/mobile_app1.jpg">
+                        <?php echo $item_image_3; ?>
                         <div class="image-overlay-zoom"></div>
                     </a>
                 </div>
                 <div class="item-description">
-                    <h4><a href="#">Mobile App</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                    <h4><?php echo $item_link_3; ?></h4>
+                    <p><?php echo $item_text_3; ?></p>
                 </div>
 
             </div>

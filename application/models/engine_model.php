@@ -71,11 +71,12 @@ class Engine_model extends CI_Model
         if ($content === FALSE)
         {
             // create content block
-            $this->create_block($id, $page);
+            $this->create_block($id, $type, $page);
             $content = '';
         }
 
         // if type is a link, we have to format it for the view
+        // @todo: add target
         if ($type == 'link' AND is_array($content))
         {
             $link_string = "<a href=\"" . $content['src'] . "\"";
@@ -223,9 +224,9 @@ class Engine_model extends CI_Model
      * @param	string
      * @return	
      */
-    function create_block($id, $page)
+    function create_block($id, $type, $page)
     {
-        $this->db->insert('tek_content', array('id' => $id, 'page' => $page));
+        $this->db->insert('tek_content', array('id' => $id, 'type' => $type, 'page' => $page));
     }
     
     /**

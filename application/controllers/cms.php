@@ -30,25 +30,23 @@ class Cms extends CI_Controller
         {
             $this->block_id = $this->engine_model->clean_block_id($this->input->post('id'));
             $this->block_type = htmlentities($this->input->post('type'), ENT_QUOTES);
-	
+
             if ($this->block_type == 'image' OR $this->block_type == 'link')
             {
                 $content = array();
-                $valid_keys = array('field_content', 'field_src', 'field_alt', 'field_class', 'field_style', 'type');
+                $valid_keys = array('field_content', 'field_target', 'field_src', 'field_alt', 'field_class', 'field_style', 'type');
                 
                 foreach($this->input->post() as $key => $val)
                 {
-                    if (array_search($key, $valid_keys))
+                    if (in_array($key, $valid_keys))
                         $content[str_replace('field_', '', $key)] = $val;
                 }
             }
             else
-            {
                 $content['content'] = $this->input->post('field');
-            }
             
             $this->engine_model->update_block($this->block_id, $content, $this->block_type);
-	
+            
             // close colorboxand refresh the page
             $this->load->view('cms/cms_saving');
         }
@@ -85,7 +83,7 @@ class Cms extends CI_Controller
         {
             case 'image' : $data = "{ id: id, field_class: $('#field_class').val(), field_style: $('#field_style').val(), field_src: $('#field_src').val(), field_alt: $('#field_alt').val(), type: type, ajax: 'true' }";
                 break;
-            case 'link' : $data = "{ id: id, field_class: $('#field_class').val(), field_style: $('#field_style').val(), field_src: $('#field_src').val(), field_alt: $('#field_alt').val(), type: type, ajax: 'true' }";
+            case 'link' : $data = "{ id: id, field_class: $('#field_class').val(), field_style: $('#field_style').val(), field_src: $('#field_src').val(), field_target: $('#field_target').val(), field_content: $('#field_content').val(), type: type, ajax: 'true' }";
                 break;
             default : $data = "{ id: id, field: $('#field').val(), type: type, ajax: 'true' }";
         }
@@ -175,21 +173,20 @@ class Cms extends CI_Controller
         } 
         else if ($type == 'link')
         {
-            // set up the content array in case its a new/blank field
-            if (empty($content))
+            // check for empty array values, and populate with empty data if found lacking
+            $chk_keys = (array('content', 'src', 'target', 'class', 'style'));
+            if (!is_array($content))
+                    $content = array();
+            
+            foreach ($chk_keys as $key)
             {
-                $content = array(
-                    'content' => '',
-                    'src' => '',
-                    'class' => '',
-                    'style' => '',
-                    'target' => ''
-                );
+                if (!isset($content[$key]))
+                    $content[$key] = '';
             }
 
             $input_string = '<div class="controls">';
             $input_string .= '	<div class="span4">';
-            $input_string .= '		<label for="field_src"><span>Href (valid url - required):</span></label>';
+            $input_string .= '		<label for="field_src"><span>HREF (valid url - required):</span></label>';
             $input_string .= '	</div>';
             $input_string .= '	<div class="span2">';
             $input_string .= '		<label for="field_content"><span>Name (Required):</span></label>';
