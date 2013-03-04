@@ -26,10 +26,10 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <?php echo $tek_head//$TEK->head(); ?>
+    <?php echo $tek_head; ?>
 
   </head>
 
-  <body class="home<?php echo $tek_body;//$TEK->body_class(); ?><?php //echo $this->get_data('page_class', FALSE); ?>">
+  <body class="home<?php echo $tek_body; //echo $this->get_data('page_class', FALSE); ?>">
 
-  <?php echo $tek_toolbar;//$TEK->toolbar();
+  <?php echo $tek_toolbar;

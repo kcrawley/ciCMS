@@ -5,25 +5,25 @@
             <h2>Professional Photography</h2>
             <p>Cumberland Photography believes that not every occasion is easy to capture. Let us be there for the memories which you want to hold onto for a lifetime.</p>
             <a href="#" class="da-link">Read more</a>
-            <div class="da-img"><img src="resources/img/parallax-slider/twitter.png" alt="image01" /></div>
+            <div class="da-img"><img src="<?= $site_resources ?>img/parallax-slider/twitter.png" alt="image01" /></div>
         </div>
         <div class="da-slide">
             <h2>Online Ordering</h2>
             <p>We have created our very own shopping cart system where you, your family, and your friends can easily purchase prints and photos.</p>
             <a href="#" class="da-link">Read more</a>
-            <div class="da-img"><img src="resources/img/parallax-slider/responsive.png" alt="image02" /></div>
+            <div class="da-img"><img src="<?= $site_resources ?>img/parallax-slider/responsive.png" alt="image02" /></div>
         </div>
         <div class="da-slide">
             <h2>Share your Photos</h2>
             <p>You can share your private gallery key with an unlimited number friends and family. If they create an account they can order photos too!</p>
             <a href="#" class="da-link">Read more</a>
-            <div class="da-img"><img src="resources/img/parallax-slider/html5.png" alt="image03" /></div>
+            <div class="da-img"><img src="<?= $site_resources ?>img/parallax-slider/html5.png" alt="image03" /></div>
         </div>
         <div class="da-slide">
             <h2>Earn Points</h2>
             <p>Every time you refer someone with your referral code, or loved ones buy prints from your gallery, you earn points towards photo shoots, prints, and more!</p>
             <a href="#" class="da-link">Read more</a>
-            <div class="da-img"><img src="resources/img/parallax-slider/css3.png" alt="image04" /></div>
+            <div class="da-img"><img src="<?= $site_resources ?>img/parallax-slider/css3.png" alt="image04" /></div>
         </div>
         <nav class="da-arrows">
             <span class="da-arrows-prev"></span>
@@ -40,6 +40,8 @@
 <!--start: Container -->
 <div class="container">
 
+    
+    <?php echo $promo1; ?>
 <hr>
 
 <!-- start: Hero Unit - Main hero unit for a primary marketing message or call to action -->
@@ -120,8 +122,8 @@
             <div class="span3">
 
                 <div class="picture">
-                    <a href="resources/img/car.jpg" rel="image" title="mobile app">
-                        <img src="resources/img/car.jpg" >
+                    <a href="<?= $site_resources ?>img/car.jpg" rel="image" title="mobile app">
+                        <img src="<?= $site_resources ?>img/car.jpg" >
                         <div class="image-overlay-zoom"></div>
                     </a>
                 </div>
@@ -136,7 +138,7 @@
 
                 <div class="picture">
                     <a href="project.html">
-                        <img src="resources/img/web_app1.jpg">
+                        <img src="<?= $site_resources ?>img/web_app1.jpg">
                         <div class="image-overlay-link"></div>
                     </a>
                 </div>
@@ -150,8 +152,8 @@
             <div class="span3">
 
                 <div class="picture">
-                    <a href="resources/img/mobile_app1.jpg" rel="image" title="mobile app">
-                        <img src="resources/img/mobile_app1.jpg">
+                    <a href="<?= $site_resources ?>img/mobile_app1.jpg" rel="image" title="mobile app">
+                        <img src="<?= $site_resources ?>img/mobile_app1.jpg">
                         <div class="image-overlay-zoom"></div>
                     </a>
                 </div>
@@ -222,26 +224,26 @@
 <div class="clients-carousel">
 
     <ul class="slides clients">
-        <li><img src="resources/img/logos/1.png" alt=""/></li>
-        <li><img src="resources/img/logos/2.png" alt=""/></li>
-        <li><img src="resources/img/logos/3.png" alt=""/></li>
-        <li><img src="resources/img/logos/4.png" alt=""/></li>
-        <li><img src="resources/img/logos/5.png" alt=""/></li>
-        <li><img src="resources/img/logos/6.png" alt=""/></li>
-        <li><img src="resources/img/logos/7.png" alt=""/></li>
-        <li><img src="resources/img/logos/8.png" alt=""/></li>
-        <li><img src="resources/img/logos/9.png" alt=""/></li>
-        <li><img src="resources/img/logos/10.png" alt=""/></li>
-        <li><img src="resources/img/logos/1.png" alt=""/></li>
-        <li><img src="resources/img/logos/2.png" alt=""/></li>
-        <li><img src="resources/img/logos/3.png" alt=""/></li>
-        <li><img src="resources/img/logos/4.png" alt=""/></li>
-        <li><img src="resources/img/logos/5.png" alt=""/></li>
-        <li><img src="resources/img/logos/6.png" alt=""/></li>
-        <li><img src="resources/img/logos/7.png" alt=""/></li>
-        <li><img src="resources/img/logos/8.png" alt=""/></li>
-        <li><img src="resources/img/logos/9.png" alt=""/></li>
-        <li><img src="resources/img/logos/10.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/1.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/2.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/3.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/4.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/5.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/6.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/7.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/8.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/9.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/10.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/1.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/2.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/3.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/4.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/5.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/6.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/7.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/8.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/9.png" alt=""/></li>
+        <li><img src="<?= $site_resources ?>img/logos/10.png" alt=""/></li>
     </ul>
 
 </div>

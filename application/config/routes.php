@@ -41,6 +41,9 @@
 //$route['default_controller'] = "welcome";
 //$route['404_override'] = '';
 $route['login'] = 'login';
+$route['login/logout'] = 'login/logout';
+$route['cms/(:any)'] = 'cms/$1';
+$route['tools/(:any)'] = 'tools/$1';
 $route['news/create'] = 'news/create';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';

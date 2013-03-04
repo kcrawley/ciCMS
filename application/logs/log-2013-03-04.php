@@ -80,3 +80,55 @@ DEBUG - 2013-03-04 03:51:09 --> File loaded: application/views/templates/public_
 DEBUG - 2013-03-04 03:51:09 --> Language file loaded: language/english/profiler_lang.php
 DEBUG - 2013-03-04 03:51:09 --> Final output sent to browser
 DEBUG - 2013-03-04 03:51:09 --> Total execution time: 3.0933
+DEBUG - 2013-03-04 03:52:12 --> Config Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> Hooks Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> Utf8 Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> UTF-8 Support Enabled
+DEBUG - 2013-03-04 03:52:12 --> URI Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> Router Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> No URI present. Default controller set.
+DEBUG - 2013-03-04 03:52:12 --> Output Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> Security Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> Input Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-03-04 03:52:12 --> Language Class Initialized
+DEBUG - 2013-03-04 03:52:12 --> Loader Class Initialized
+DEBUG - 2013-03-04 03:52:13 --> Session Class Initialized
+DEBUG - 2013-03-04 03:52:13 --> Helper loaded: string_helper
+DEBUG - 2013-03-04 03:52:14 --> Session routines successfully run
+DEBUG - 2013-03-04 03:52:14 --> Controller Class Initialized
+DEBUG - 2013-03-04 03:52:15 --> Model Class Initialized
+DEBUG - 2013-03-04 03:52:15 --> Model Class Initialized
+DEBUG - 2013-03-04 03:52:15 --> File loaded: application/views/templates/public_header.php
+DEBUG - 2013-03-04 03:52:15 --> File loaded: application/views/templates/public_nav.php
+DEBUG - 2013-03-04 03:52:15 --> File loaded: application/views/pages/home.php
+DEBUG - 2013-03-04 03:52:15 --> File loaded: application/views/templates/public_footer.php
+DEBUG - 2013-03-04 03:52:15 --> Language file loaded: language/english/profiler_lang.php
+DEBUG - 2013-03-04 03:52:15 --> Final output sent to browser
+DEBUG - 2013-03-04 03:52:15 --> Total execution time: 3.0709
+DEBUG - 2013-03-04 03:52:35 --> Config Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> Hooks Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> Utf8 Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> UTF-8 Support Enabled
+DEBUG - 2013-03-04 03:52:35 --> URI Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> Router Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> No URI present. Default controller set.
+DEBUG - 2013-03-04 03:52:35 --> Output Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> Security Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> Input Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-03-04 03:52:35 --> Language Class Initialized
+DEBUG - 2013-03-04 03:52:35 --> Loader Class Initialized
+DEBUG - 2013-03-04 03:52:36 --> Session Class Initialized
+DEBUG - 2013-03-04 03:52:36 --> Helper loaded: string_helper
+DEBUG - 2013-03-04 03:52:37 --> Session routines successfully run
+DEBUG - 2013-03-04 03:52:37 --> Controller Class Initialized
+DEBUG - 2013-03-04 03:52:38 --> Model Class Initialized
+DEBUG - 2013-03-04 03:52:38 --> Model Class Initialized
+DEBUG - 2013-03-04 03:52:38 --> File loaded: application/views/templates/public_header.php
+DEBUG - 2013-03-04 03:52:38 --> File loaded: application/views/templates/public_nav.php
+DEBUG - 2013-03-04 03:52:38 --> File loaded: application/views/pages/home.php
+DEBUG - 2013-03-04 03:52:38 --> File loaded: application/views/templates/public_footer.php
+DEBUG - 2013-03-04 03:52:38 --> Language file loaded: language/english/profiler_lang.php
+DEBUG - 2013-03-04 03:52:38 --> Final output sent to browser
+DEBUG - 2013-03-04 03:52:38 --> Total execution time: 3.0841

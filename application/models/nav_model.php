@@ -30,11 +30,12 @@ class Nav_model extends CI_Model
     public function get_data()
     {
         $this->benchmark->mark('nav_data_start');
-        if ($results = $this->db->query("SELECT * FROM tek_navigator WHERE active = 1"))
+        
+        $query = $this->db->get_where('tek_navigator', array('active' => 1));
+        
+        if ($query->num_rows() > 0)
         {
-            $nav_data = $results->fetchAll();
-
-            foreach ($nav_data as $nav_row)
+            foreach ($query->result_array() as $nav_row)
             {
                 if ($nav_row['is_primary'])
                 {

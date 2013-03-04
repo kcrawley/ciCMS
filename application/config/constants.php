@@ -36,10 +36,7 @@ define('FOPEN_READ_WRITE_CREATE',				'a+b');
 define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
-/**
- * Application Specific Constants
- */
-
+define('FCCPATH', str_replace('\\', '/', FCPATH));
 define('SITE_RESOURCES', '/wwwTek/resources/public/');
 define('APP_RESOURCES', '/wwwTek/resources/admin/');
 define('SITE_PATH', '/wwwTek/');

@@ -1,3 +1,4 @@
+<?php if(isset($js)) echo $js; ?>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $('#login').submit(function(e){
@@ -21,18 +22,19 @@
 		
         $('#tek_cancel').live('click', function(e){
             e.preventDefault();
-			
             $.colorbox.close();
             var page = window.location.href;
-            page = page.substring(0, page.lastIndexOf('?'));
-			
+            page = page.substring(0, page.lastIndexOf('index.php'));
             window.location = page;
         });
     });
 </script>
 <div id="tek_wrapper" style="width: 380px;">
     <h1>wwwTEK CMS</h1>
-    <div id="tek_content">            
+    <div id="tek_content">
+        <?php if (isset($alerts)) {
+        echo $alerts;
+        } ?>
         <form action="" method="post" id="login">
             <div>
                 <div class="row">

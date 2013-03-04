@@ -1,7 +1,7 @@
-<link href="<?= APP_RESOURCES; ?>css/tek_style.less" media="screen" rel="stylesheet" type="text/less">
-<script type="text/javascript" src="<?= APP_RESOURCES ?>javascript/less.js"></script>
+<link href="<?php echo APP_RESOURCES; ?>css/tek_style.less" media="screen" rel="stylesheet" type="text/less">
+<script type="text/javascript" src="<?php echo APP_RESOURCES ?>javascript/less.js"></script>
 <!-- tiny_mce -->
-<script type="text/javascript" src="<?= APP_RESOURCES; ?>javascript/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="<?php echo APP_RESOURCES; ?>javascript/tiny_mce/tiny_mce.js"></script>
 
 <script type="text/javascript">
     $(document).ready(function($) {

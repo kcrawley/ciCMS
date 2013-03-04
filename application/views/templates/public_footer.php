@@ -126,7 +126,7 @@
 
         <div class="span12">
             <p>
-                &copy; 2013, <a href="http://cumberlandcreativegroup.com">Cumberland Photography</a>. Designed by <a href="http://cumberlandcreativegroup.com">Cumberland Creative Group</a> in Crossville, TN <img src="resources/img/poland2.png" alt="Poland" style="margin-top:-4px"><a href="?login">*</a>
+                &copy; 2013, <a href="http://cumberlandcreativegroup.com">Cumberland Photography</a>. Designed by <a href="http://cumberlandcreativegroup.com">Cumberland Creative Group</a> in Crossville, TN <img src="resources/img/poland2.png" alt="Poland" style="margin-top:-4px"><a href="<?= SITE_PATH ?>index.php/action/dologin">*</a>
             </p>
         </div>
 

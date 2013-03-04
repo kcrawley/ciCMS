@@ -9,9 +9,8 @@
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
-
 /*
- * render_nav hook - builds the primary site navigation from database
+ * NavRender hook - builds the primary site navigation from database
  * and loads it into the $data var for use in the view
  */
 $hook['post_controller_constructor'][] = array(
@@ -31,6 +30,8 @@ $hook['post_controller_constructor'][] = array(
     'filename'  =>  'Tek.php',
     'filepath'  =>  'hooks'
 );
+
+
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */

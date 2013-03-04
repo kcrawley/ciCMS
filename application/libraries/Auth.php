@@ -30,23 +30,22 @@ class Auth {
      */
     public function validate_login($user, $pass) {
         // create query
-        if ($stmt = $this->CI->db->prepare("SELECT id, auth, username FROM tek_users WHERE username = :username AND password = :password")) {
-
-            $stmt->bindParam(":username", $user, PDO::PARAM_STR);
-            $stmt->bindParam(":password", md5($pass . $this->salt), PDO::PARAM_STR); // built-in pw hash
-            $stmt->execute();
-
-            // check if we got some results
-            if ($userdata = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $userdata['logged_in'] = TRUE;
-                $this->CI->session->set_userdata($userdata);
-                return TRUE;
-            } else {
-                $stmt->close();
-                return FALSE;
+        $this->CI->db->select('id, auth, username');
+        $query = $this->CI->db->get_where('tek_users', array('username' => $user, 'password' => md5($pass)));
+        
+        if ($query->num_rows() > 0)
+        {
+            foreach ($query->row_array() as $key => $var)
+            {
+                $userdata[$key] = $var;
             }
-        } else {
-            die("ERROR: Could not prepare statement");
+            $userdata['logged_in'] = TRUE;
+            $this->CI->session->set_userdata($userdata);
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
         }
     }
 
@@ -91,11 +90,11 @@ class Auth {
      * Checks login status and loads an error method if not.
      */
     public function check_authorization() {
-        return (!$this->CI->session->userdata('logged_in')) ? $this->Renderer->error('Unauthorized') : TRUE;
+        return ($this->CI->session->userdata('logged_in')) ? TRUE : $this->Renderer->error('Unauthorized');
     }
     
     public function logged_in() {
-        return (!$this->CI->session->userdata('logged_in')) ? FALSE : TRUE;
+        return ($this->CI->session->userdata('logged_in')) ? TRUE : FALSE;
     }
 
     /**
@@ -121,13 +120,14 @@ class Auth {
      * @return boolean or int
      */
     public function get_current_uid() {
-        if ($stmt = $this->CI->db->prepare("SELECT `id` FROM `tek_users` WHERE `username` = :username")) {
-
-            $stmt->bindParam(":username", $this->get_current_username(), PDO::PARAM_STR);
-            $stmt->execute();
-
-            $data = $stmt->fetch(PDO::FETCH_ASSOC);
-            return (int)$data['id'];
+        
+        $this->CI->db->select('id');
+        $query = $this->CI->db->get_where('tek_users', array('username'=>$this->get_current_username()));
+        
+        if ($query->num_rows > 0)
+        {
+            $row = $query->row_array();
+            return $row['id'];
         }
         return FALSE;
     }

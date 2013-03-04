@@ -5,6 +5,7 @@ class Pages extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('engine_model', '', true);
     }
     
     public function view($page = 'home', $extra = NULL)
@@ -14,26 +15,23 @@ class Pages extends CI_Controller {
         {
             show_404();
         }
+        // building initial database stuff
+        $data['promo1'] = $this->engine_model->display_block(array(
+            'id'=>'promo1', 
+            'type'=>'image', 
+            'page'=>'home', 
+            array(
+                'max_width'=>'100'
+                )
+            )
+        );
         
-        $data['extra'] = ($extra) ? $extra : "";        
         $data['title'] = ucfirst($page);
+        $data['site_resources'] = SITE_RESOURCES;
         
-        $this->benchmark->mark('header_start');
         $this->load->view('templates/public_header', $data);
-        $this->benchmark->mark('header_end');
-        
-        $this->benchmark->mark('nav_start');
         $this->load->view('templates/public_nav', $data);
-        $this->benchmark->mark('nav_end');
-        
-        $this->benchmark->mark('page_start');
         $this->load->view('pages/'.$page, $data);
-        $this->benchmark->mark('page_end');
-        
-        $this->benchmark->mark('footer_start');
         $this->load->view('templates/public_footer', $data);
-        $this->benchmark->mark('footer_end');
     }
-    
-    
 }
