@@ -22,57 +22,68 @@ class Engine_model extends CI_Model
      * The $muliple var format determines where and what information to obtain from the database
      * It can accept multiple data types (string/array)
      * 
-     * format (basic): foo, (foo) = identifier ($id)
      * format (string): foo_man_chu, (foo) = page name ($page), (man) = block type ($type), (chu) = identifier ($id)
      * format (array): [page] = page name ($page), [type] = block type ($type), [id] = identifier ($id)
      * 
      * @access	public
-     * @param	string, string
+     * @param	mixed (array/string), string, array
      * @return	string
      */
-    public function display_block($multiple, $page = 'default', $type = 'wysiwyg', $params = FALSE)
+    public function display_block($args, $params = FALSE, $content = NULL)
     {
         /** Parses $multiple and determines the data format and variables for use within this method. */
-        if (is_array($multiple)) {
-            foreach($multiple as $key => $var)
+        if (is_array($args)) {
+            foreach($args as $key => $var)
             {
                 $$key = $var;
                 if (is_array($var))
                     foreach($var as $param_key => $param_var)
                         $$param_key = $param_var;
             }
-        } elseif (strpos($multiple, '_')) {
-            $str_params = explode('_', $multiple);
+        } elseif (strpos($args, '_')) {
+            $str_params = explode('_', $args);
             if (count($str_params) > 2)
             {
                 $page = $str_params[0];
                 $type = $str_params[1];
                 $id = $str_params[2];
             }
-            else
+            elseif (is_null($content))
             {
-                $id = $multiple;
+                return "Content failed to load.";
             }
-        } else {
-            $id = $multiple;
+        } elseif (is_null($content)) {
+            return "Content failed to load.";
         }
-        // clean id
-        $id = $this->clean_block_id($id);
-
-        // check for valid type
-        $type = strtolower(htmlentities($type, ENT_QUOTES));
-        if (in_array($type, $this->content_types) === FALSE)
+        
+        // check to see if the content was passed to the method
+        if (is_null($content))
         {
-            return "<script>alert('Please enter a valid block type for \'" . $id . "\'');</script>";
+            // content was not, we need to prep/load data from the database
+            // clean id
+            $id = $this->clean_block_id($id);
+
+            // check for valid type
+            $type = strtolower(htmlentities($type, ENT_QUOTES));
+            if (in_array($type, $this->content_types) === FALSE)
+            {
+                return "<script>alert('Please enter a valid block type for \'" . $id . "\'');</script>";
+            }
+
+            // get content
+            $content = $this->load_block($id, $type);
+            
+            if ($content === FALSE)
+            {
+                // create content block
+                $this->create_block($id, $type, $page);
+                $content = '';
+            }
         }
-
-        // get content
-        $content = $this->load_block($id, $type);
-        if ($content === FALSE)
+        elseif (isset($content) AND is_array($content))
         {
-            // create content block
-            $this->create_block($id, $type, $page);
-            $content = '';
+            $id = $content['id'];
+            $type = $content['type'];
         }
 
         // if type is a link, we have to format it for the view
@@ -87,7 +98,8 @@ class Engine_model extends CI_Model
             if (!empty($content['target']))
                 $link_string .= " style=\"" . $content['target'] . "\"";
             $link_string .= ">" . $content['content'] . "</a>";
-            $content = $link_string;
+            
+            $content['content'] = $link_string;
         }
 
         // if type is of image, we have to do some work on the content array
@@ -121,7 +133,7 @@ class Engine_model extends CI_Model
                     $image_string = '<img style="display: block; width: 140px; height: 140px;" class="img-rounded" data-src="' . SITE_RESOURCES . 'bootstrap/js/holder.js/140x140" width="140" height="140" />';
                 }
             }
-            $content = $image_string;
+            $content['content'] = $image_string;
         }
 
         // check login status
@@ -145,12 +157,14 @@ class Engine_model extends CI_Model
             $edit_link = '<a class="tek_edit_link" href="' . SITE_PATH . 'index.php/cms/edit/' . $id . '/' . $type . '">Edit Block</a>';
             $edit_end = '</div>';
 
-            $conc_edit = $edit_start . $edit_type . $edit_link . $content . $edit_end;
+            $conc_edit = $edit_start . $edit_type . $edit_link;
+            $conc_edit .= (is_array($content)) ? $content['content'] : $content;
 
-            return $conc_edit;
-        } else
+            return $conc_edit . $edit_end;
+        } 
+        else
         {
-            return $content;
+            return (is_array($content)) ? $content['content'] : $content;
         }
     }
 
@@ -176,7 +190,7 @@ class Engine_model extends CI_Model
      * @param	int, string
      * @return	string or array or Bool
      */
-    function load_block($id, $type = '')
+    public function load_block($id, $type = '', $page = NULL)
     {
         if ($type == 'image')
         {
@@ -204,15 +218,27 @@ class Engine_model extends CI_Model
             }
             return FALSE;
         }
-
-        $this->CI->db->select('content');
-        $query = $this->CI->db->get_where('tek_content', array('id' => $id));
         
-        if ($query->num_rows() > 0)
+        if (is_null($page))
         {
-            $row = $query->row_array();
+            $this->CI->db->select('content');
+            $query = $this->CI->db->get_where('tek_content', array('id' => $id));
+
+
+            if ($query->num_rows() > 0)
+            {
+                $row = $query->row_array();
+                return $row['content'];
+            }
+        }
+        else
+        {
+            $query = $this->CI->db->get_where('tek_content', array('page' => $page));
             
-            return $row['content'];
+            if ($query->num_rows() > 0)
+            {
+                return $query->result_array();
+            }
         }
         return FALSE;
     }

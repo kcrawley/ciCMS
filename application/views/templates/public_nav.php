@@ -30,7 +30,8 @@ foreach ($site_nav['primary'] as $nav_primary):
         print_r('<li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">' . $nav_primary['name'] . '<b class="caret"></b></a>
                 <ul class="dropdown-menu">' . $sub_nav . '</ul></li>');
-    } else if ($nav_primary['type'] > 0)
+    } 
+    else if ($nav_primary['type'] > 0)
     {
         print_r('<li' . $li_active . '><a href="' . $nav_primary['href'] . '">' . $nav_primary['name'] . '</a></li>');
     }
