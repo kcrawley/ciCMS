@@ -96,7 +96,7 @@ class Engine_model extends CI_Model
             if (!empty($content['style']))
                 $link_string .= " style=\"" . $content['style'] . "\"";
             if (!empty($content['target']))
-                $link_string .= " style=\"" . $content['target'] . "\"";
+                $link_string .= " target=\"" . $content['target'] . "\"";
             $link_string .= ">" . $content['content'] . "</a>";
             
             $content['content'] = $link_string;

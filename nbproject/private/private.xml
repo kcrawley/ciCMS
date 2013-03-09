@@ -2,15 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/C:/wamp/www/cphoto/application/models/engine_model.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/models/nav_model.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/config/routes.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/controllers/pages.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/views/pages/home.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/views/cms/cms_edit.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/controllers/cms.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/controllers/tools.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/config/constants.php</file>
-        <file>file:/C:/wamp/www/cphoto/application/libraries/Auth.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/controllers/cms.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/controllers/pages.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/models/nav_model.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/controllers/dashboard.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/models/dashboard_model.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/views/dashboard/dashboard.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/config/routes.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/views/templates/public_footer.php</file>
+        <file>file:/Users/mbpKevin/Documents/projects/wwwTek/application/views/templates/tek_toolbar.php</file>
     </open-files>
 </project-private>

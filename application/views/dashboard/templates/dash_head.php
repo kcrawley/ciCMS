@@ -17,7 +17,6 @@
         <script type="text/javascript" src="<?php echo $app_resources; ?>javascript/tiny_mce/tiny_mce.js"></script>
 
         <script type="text/javascript">
-
             jQuery(document).ready(function($) {
 
                 $('#tek_cancel, #tek_close').live('click', function(e) {
@@ -26,7 +25,6 @@
                 });
 
             });
-
         </script>
     </head>
 

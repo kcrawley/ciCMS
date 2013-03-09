@@ -15,12 +15,17 @@ class Pages extends CI_Controller {
         {
             show_404();
         }
+        
+        // loads content live edit blocks based on the page requested
         $content_array = $this->engine_model->load_block(null, null, $page);
         
+        // parses each block fetched from the database and forms it for the view
         foreach ($content_array as $each)
         {
+            // sets the content variable for the view, based on the content id
             $data[$each['id']] = $this->engine_model->display_block(null, null, $each);
         }
+        
         $data['title'] = ucfirst($page);
         $data['site_resources'] = SITE_RESOURCES;
         
