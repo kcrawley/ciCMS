@@ -2,7 +2,7 @@
 	<h1>CMS Settings<div id="tek_close">Close Dashboard</div></h1>
     <div id="tek_content">
     	<div class="tek_left">
-        	<?php echo $dashboard_nav; ?>
+            <?php echo $dashboard_nav; ?>
         </div>
         <div class="tek_right">
         	<h2>Dashboard</h2>

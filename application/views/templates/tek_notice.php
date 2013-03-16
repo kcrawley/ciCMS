@@ -4,7 +4,7 @@
  * tek_notice.php - revised 03/02/2013
  * Handles error/notice/alert outputting.
  */
-if (isset($alerts))
+if (is_array($alerts))
 {
     $alert_data = '';
     foreach ($alerts as $key => $value)
@@ -14,5 +14,5 @@ if (isset($alerts))
         $alert_data .= '<span>' . $value . '</span>';
         $alert_data .= '</div>';
     }
-    return $alert_data;
+    echo $alert_data;
 }

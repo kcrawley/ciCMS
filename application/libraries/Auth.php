@@ -11,7 +11,7 @@ if (!defined('BASEPATH'))
 class Auth {
 
     private $CI;
-    private $salt = 'The horses run wild through the woods.';
+    private $salt = '';
     private $auth_levels = array(
         "cms_edit" => "90",
         "cms_toolbar" => "50"
@@ -49,6 +49,21 @@ class Auth {
         }
     }
 
+    
+    public function validate_password($pass)
+    {
+        $this->CI->db->select('id');
+        $query = $this->CI->db->get_where('tek_users', array('username' => $this->get_current_username(), 'password' => md5($pass)));
+        
+        return ($query->num_rows() > 0) ? TRUE : FALSE;
+    }
+    
+    public function set_password($pass)
+    {
+        $this->CI->db->where('username', $this->get_current_username());
+        $this->CI->db->update('tek_users', array('password' => md5($pass)));
+    }
+    
     /**
      * Runs a challenge against the stored session auth and pre-defined access levels
      * @param str $challenge
